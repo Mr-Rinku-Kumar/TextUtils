@@ -1,11 +1,11 @@
 import "./App.css";
 import Alert from "./components/Alert";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Textarea from "./components/Textarea";
 import { useState } from "react";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState("light");
@@ -47,29 +47,31 @@ function App() {
   };
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Navbar
           About="About"
           title="TextUtils"
           mode={mode}
           toggleMode={toggleMode}
         />
-        <Alert alert={alert} />
+        <div style={{ height: "50px" }}>
+          <Alert alert={alert} />
+        </div>
         <div className="container my-3">
-          <Switch>
-            <Route exact path="/about">
-              <About about={"About TextUtils"}/>
+          {/* <Switch> */}
+            {/* <Route exact path="/about">
+              <About about={"About TextUtils"} />
             </Route>
-            <Route exact path="/">
+            <Route exact path="/"> */}
               <Textarea
                 showAlert={showAlert}
                 heading="Enter your text to analyze"
                 mode={mode}
               />
-            </Route>
-          </Switch> 
+            {/* </Route> */}
+          {/* </Switch> */}
         </div>
-       </Router>
+      {/* </Router> */}
     </>
   );
 }

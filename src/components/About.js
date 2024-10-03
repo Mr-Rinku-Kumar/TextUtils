@@ -1,32 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function About(props) {
-  const [myStyle, setmyStyle] = useState({
-    color: "white",
-    backgroundColor: "black",
-  });
-  const [btnText, setbtnText] = useState("enable dark mode");
 
-  const toggleStyle = () => {
-    if (myStyle.color === "white") {
-      setmyStyle({
-        color: "gray",
-        backgroundColor: "white",
-        border: "0.5px solid black",
-      });
-      setbtnText("enable dark mode");
-    } else {
-      setmyStyle({
-        color: "white",
-        backgroundColor: "gray",
-      });
-      setbtnText("enable light mode");
-    }
-  };
+  
   return (
     <>
-      <h1 className="my-5">{props.About}</h1>
-      <form className="my-box" style={myStyle}>
+      <h1 className="my-5">{props.toggleMode}</h1>
+      <form className="my-box" >
         <div className="my-5">
           <p className="my-3 mx-3">
             TextUtils is a simple and powerful utility app designed to make text
@@ -55,9 +35,6 @@ export default function About(props) {
             or user input, or for accessibility features like screen readers.
           </p>
         </div>
-        <button type="button" className="btn btn-primary" onClick={toggleStyle}>
-          {btnText}
-        </button>
       </form>
     </>
   );
